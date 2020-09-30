@@ -22,9 +22,6 @@ export class RequestInterceptorService implements HttpInterceptor {
         console.log('oi');
         request = request.clone({
             setHeaders: {
-                // 'Authorization': 'Bearer ' + 'vnnTb5qTkWJPfrcN971XPjm3ALr2AoJt',
-                'page-Size': '10',
-                'count': '10'
             },
         });
 

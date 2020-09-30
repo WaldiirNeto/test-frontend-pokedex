@@ -21,6 +21,7 @@ export class ListPokemonsComponent implements OnInit {
   notShowFilter = false;
   constructor(private pokemonService: PokemonService, private router: Router) { }
   ngOnInit() {
+    // localStorage.clear();
     this.listPokemons$ = this.pokemonService.listPokemons()
       .pipe(
         map((resultListPokemon: PokemonListInterface) => {
