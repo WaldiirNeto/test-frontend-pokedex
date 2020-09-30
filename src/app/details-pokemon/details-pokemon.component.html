@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/" replaceUrl="true">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" color="tertiary">
+  <ion-card><br>
+    <div class="ion-text-center">
+      <img [src]="pokemon.imageUrlHiRes" />
+    </div>
+    <ion-card-header>
+      <ion-card-subtitle>
+        <div class="ion-text-center">{{pokemon.id}}</div>
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-title>
+        <div class="ion-text-center">{{pokemon.name}}</div>
+      </ion-card-title>
+      <ion-item-group>
+        <ion-item-divider>
+          <ion-label>Types</ion-label>
+        </ion-item-divider>
+        <ion-item>
+          <ion-label> {{pokemon.types}}</ion-label>
+        </ion-item>
+      </ion-item-group>
+
+      <ion-item-group *ngFor="let attack of pokemon.attacks">
+        <ion-item-divider>
+          <ion-label>Attack {{attack.name}}</ion-label>
+        </ion-item-divider>
+        <ion-item>
+          <ion-label>Converted Energy Cost</ion-label>{{attack.convertedEnergyCost}}
+        </ion-item>
+        <ion-item>
+          <ion-label>Damage</ion-label>{{attack.damage}}
+        </ion-item>
+        <ion-item>
+          <ion-label>Description</ion-label>{{attack.text}}
+        </ion-item>
+      </ion-item-group>
+      <ion-item-group *ngFor="let resistances of pokemon.resistances">
+        <ion-item-divider>
+          <ion-label>Resistances {{resistances.type}}</ion-label>
+        </ion-item-divider>
+        <ion-item>
+          <ion-label>value</ion-label>{{resistances.value}}
+        </ion-item>
+      </ion-item-group>
+      <ion-item-group *ngFor="let weaknesses of pokemon.weaknesses">
+        <ion-item-divider>
+          <ion-label>Weaknesses {{weaknesses.type}}</ion-label>
+        </ion-item-divider>
+        <ion-item>
+          <ion-label>value</ion-label>{{weaknesses.value}}
+        </ion-item>
+      </ion-item-group>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

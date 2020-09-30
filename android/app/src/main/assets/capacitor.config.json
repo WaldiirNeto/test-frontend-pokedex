@@ -1,0 +1,13 @@
+{
+  "appId": "com.cardspokemon.app",
+  "appName": "cards-pokemon",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

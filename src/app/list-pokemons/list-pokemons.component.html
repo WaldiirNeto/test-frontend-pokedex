@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-searchbar debounce="500" (ionChange)="updateSearch($event)" class="search"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" color="tertiary">
+  <div class="example-loading-shade" *ngIf="isLoadingResults || isRateLimitReached">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    <div class="example-rate-limit-reached" *ngIf="isRateLimitReached">
+      GitHub's API rate limit has been reached. It will be reset in one minute.
+    </div>
+  </div>
+  <ion-card *ngFor="let pokemon of listPokemons$ | async"><br>
+    <div class="ion-text-center">
+      <img [src]="pokemon.imageUrl" />
+    </div>
+    <ion-card-header>
+      <ion-card-subtitle>
+        <div class="ion-text-center">{{pokemon.id}}</div>
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-title>
+        <div class="ion-text-center">{{pokemon.name}}</div>
+      </ion-card-title>
+      <div class="ion-text-center">
+        Types: {{pokemon.types}}
+      </div>
+      <div class="ion-text-center">
+        <ion-button color="primary" (click)="details(pokemon)">
+          <ion-icon name="add-outline"></ion-icon> DETALHES
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="!isLoadingResults">
+    <ion-card *ngIf="notShowFilter">
+      <ion-card-header>
+        <ion-card-subtitle>
+          Não encontramos o seu pokémon
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        :( tente outro!
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

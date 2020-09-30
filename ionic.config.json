@@ -1,5 +1,7 @@
 {
   "name": "cards-pokemon",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

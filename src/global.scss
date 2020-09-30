@@ -24,3 +24,24 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.search {
+
+    font-style: inherit;
+    letter-spacing: inherit;
+    text-decoration: inherit;
+    text-indent: inherit;
+    text-overflow: inherit;
+    text-transform: inherit;
+    text-align: inherit;
+    white-space: inherit;
+    border-radius: var(--border-radius);
+    display: block;
+    width: 100%;
+    border: 0;
+    outline: none;
+    font-family: inherit;
+    box-shadow: var(--box-shadow);
+    box-sizing: border-box;
+    appearance: none;
+}
